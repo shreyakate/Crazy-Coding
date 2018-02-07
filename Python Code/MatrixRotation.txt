@@ -1,0 +1,37 @@
+# your code goes here
+def rotateClockwise(matrix):
+        if matrix:
+            m = len(matrix)
+            n = m-1
+            for i in range(m/2):
+                for j in range(i,n-i):
+
+                    matrix[i][j],matrix[n-j][i],matrix[n-i][n-j],matrix[j][n-i] = matrix[n-j][i],matrix[n-i][n-j],matrix[j][n-i],matrix[i][j]
+      
+def rotateAntiClockwise(matrix):
+	if matrix:
+		m = len(matrix)
+		n = m-1
+		for i in range(m/2):
+			for j in range(i,n-i):
+				
+				matrix[i][j],matrix[n-j][i],matrix[n-i][n-j],matrix[j][n-i] = matrix[j][n-i],matrix[i][j],matrix[n-j][i],matrix[n-i][n-j]
+	            
+A = [
+  [ 5, 1, 9,11],
+  [ 2, 4, 8,10],
+  [13, 3, 6, 7],
+  [15,14,12,16]
+]
+
+
+B= [
+  [7,4,1],
+  [8,5,2],
+  [9,6,3]
+]
+rotateClockwise(A)
+rotateAntiClockwise(B)
+
+for i in range(len(A)):	print A[i]
+for i in range(len(B)):	print B[i]
