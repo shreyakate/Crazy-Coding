@@ -1,0 +1,15 @@
+# your code goes here
+def BinarySearchRec(A, key, low, high):
+	if low > high : 
+		return -1
+	else: 
+		mid = low + (high-low)/2
+		if A[mid] ==key :
+			return mid
+		elif A[mid] > key:
+			return BinarySearchRec(A,key,low,mid-1)
+		else:
+			return BinarySearchRec(A,key,mid+1,high)
+	
+
+print BinarySearchRec([1,2,3,4,5],1,0,4)

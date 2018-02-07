@@ -1,0 +1,66 @@
+# your code goes here
+class Node:
+	
+	def __init__(self,key):
+		self.data = key
+		self.left = None
+		self.right = None
+	
+def fullTreePrint(root):
+	if root == None: return
+	queue1 = []
+	queue1.append(root)
+	
+	while len(queue1)>0:
+		print queue1[0].data,
+		node = queue1.pop(0)
+		
+		if node.left:
+			queue1.append(node.left)
+		if node.right:
+			queue1.append(node.right)
+			
+def height(root):
+	if root == None:
+		return 0
+	queue2 = []
+	h = 1
+	queue2.append((root,h))
+	while len(queue2)>0:
+		(node,h) = queue2.pop(0)
+		if node.left or node.right:
+			if node.left: queue2.append((node.left,h+1))
+			if node.right: queue2.append((node.right,h+1))
+	return h
+	
+def levelOrderTreePrint(root,level):
+	if root == None:
+		return
+	queue3 = []
+	res=[]
+	l = 1
+	queue3.append((root,l))
+	while  len(queue3)>0:
+		if level == queue3[0][1]: 
+			res.append(queue3[0][0].data)
+		(node,l) = queue3.pop(0)
+		if node.left or node.right:
+			if node.left: queue3.append((node.left,l+1))
+			if node.right: queue3.append((node.right,l+1))
+	return res
+	
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.right.left = Node(8)
+root.left.left = Node(4)
+root.left.right = Node(5)
+root.left.right.left = Node(16)
+root.left.right.right = Node(17)
+root.left.left.right = Node(6)
+
+
+fullTreePrint(root)
+print ''
+print height(root)
+print levelOrderTreePrint(root,1)

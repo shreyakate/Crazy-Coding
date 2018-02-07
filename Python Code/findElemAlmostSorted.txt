@@ -1,0 +1,20 @@
+# your code goes here
+def findElemAlmostSorted(A,k,low,high):
+	if low<= high:
+		mid = low + (high - low)/2
+		if A[mid] == k:
+			return mid
+		if A[mid+1] == k : 
+			return mid+1
+		if A[mid-1]== k:
+			return mid-1
+		if A[mid]>k:
+			return findElemAlmostSorted(A,k,low,mid-1)
+		else:
+			return findElemAlmostSorted(A,k,mid+1,high)
+	
+	else:
+		return -1
+		
+A =[10, 3, 40, 20, 50, 80, 70]
+print findElemAlmostSorted(A,70,0,len(A)-1)

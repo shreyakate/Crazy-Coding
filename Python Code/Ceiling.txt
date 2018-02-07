@@ -1,0 +1,16 @@
+def Ceiling(A,x, low, high):
+	if A[high]>= x:
+		mid = low + (high -low)/2
+		if A[mid-1]<=x<=A[mid]: 
+			return mid
+		elif A[mid] >x: 
+			return Ceiling(A,x,low,mid-1)
+		else: 
+			return Ceiling(A, x, mid+1,high)
+	else:
+		return -1
+ 
+A=[1, 2, 8, 10, 10, 12, 19]
+y = Ceiling(A, 5,0,6)
+ 
+print A[y]

@@ -1,0 +1,38 @@
+# your code goes here
+def BinarySearchRec(A, key, low, high):
+	if low > high : 
+		return -1
+	else: 
+		mid = low + (high-low)/2
+		if A[mid] ==key :
+			return mid
+		elif A[mid] > key:
+			return BinarySearchRec(A,key,low,mid-1)
+		else:
+			return BinarySearchRec(A,key,mid+1,high)
+
+def findPivot(A):
+	x, y = 0,1
+	while y<len(A):
+		if A[x]>A[y]: 
+			return x
+		else:
+			x += 1
+			y += 1
+	return -1
+
+def finNumSortRot(A, key):
+	x = findPivot(A)
+	if x ==-1: 
+		return BinarySearchRec(A,key,x+1,len(A)-1)
+	if A[x]==key:
+		return x
+	elif A[0]<key:
+		return BinarySearchRec(A,key,0,x)
+	else:
+		return BinarySearchRec(A,key,x+1,len(A)-1)
+	
+	
+	
+
+print finNumSortRot([5, 6, 7, 8, 9, 10,1,2,3,4],4)

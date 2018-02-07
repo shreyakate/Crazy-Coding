@@ -1,0 +1,17 @@
+# your code goes 
+def SelectionSort(A):
+	for i in range (len(A)):
+		min = 32000
+		pos = -1
+		swap = False
+		for j in range(i,len(A)):
+			if A[j]<min:
+				min= A[j]
+				pos = j
+				swap = True
+		if swap:
+			A[i], A[pos] = A[pos], A[i]
+			
+A = [4,5,1,3,2]
+SelectionSort(A)
+print A

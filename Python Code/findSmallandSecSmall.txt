@@ -1,0 +1,15 @@
+# your code goes here
+def findSmallandSecSmall(A):
+	small = 32000
+	secSmall = 32000
+	posSmall = -1
+	for i in range(len(A)):
+		if A[i]<small:
+			secSmall= small
+			small = A[i]
+		if A[i]<secSmall and A[i]>small:
+			secSmall = A[i]
+			
+	return small, secSmall
+	
+print findSmallandSecSmall([12, 13, 1, 10, 34, 17])

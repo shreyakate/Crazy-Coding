@@ -1,0 +1,39 @@
+# your code goes here
+# your code goes here
+class Node:
+	def __init__(self,key):
+		self.data = key
+		self.left = None
+		self.right = None
+def height(node):
+	if node is None:
+		return 0
+	else:
+		lheight = height(node.left)
+		rheight = height(node.right)
+		if lheight >rheight:
+			return lheight + 1
+		else:
+			return rheight + 1
+
+def fullTreePrint(root):
+	h = height(root)
+	for i in range(1,h+1):
+		levelOrderTreePrint(root,i)
+		
+def levelOrderTreePrint(root,level):
+	if root == None: 
+		return
+	if level == 1:
+		print "%d" %(root.data),
+	elif level > 1:
+		levelOrderTreePrint(root.left, level-1)
+		levelOrderTreePrint(root.right, level-1)
+			
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+
+fullTreePrint(root)

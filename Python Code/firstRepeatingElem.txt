@@ -1,0 +1,15 @@
+# your code goes here
+# your code goes here
+from collections import OrderedDict
+def firstRepeatingElem(A):
+	d = OrderedDict()
+	for i in A:
+		d[i]=d.get(i,0)+1
+	
+	for k,v in d.items():
+		if v>1:
+			return k
+	
+	return -1
+
+print firstRepeatingElem([10, 5, 3, 4, 3, 5, 6])

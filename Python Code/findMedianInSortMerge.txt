@@ -1,0 +1,15 @@
+# your code goes here
+def findMedianInSortMerge(A, B):
+	i,j = 0,0
+	C =[]
+	while len(C) <= len(A):
+		if A[i] < B[j]: 
+			C.append(A[i])
+			i+=1
+		else: 
+			C.append(B[j])
+			j += 1
+	print C
+	return sum(C[-2:])/2
+		
+print findMedianInSortMerge([1,12,15,26,38], [2,13,17,30,45])

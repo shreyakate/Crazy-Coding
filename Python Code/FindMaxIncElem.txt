@@ -1,0 +1,25 @@
+# your code goes here
+# your code goes here
+def FindMaxIncElem(A,low,high):
+	if low==high:
+		return A[low]
+	if high == low +1:
+		if A[low]>=A[high]:
+			return A[low]
+		else:
+			return A[high]
+	
+	mid = low + (high -low)/2
+	if A[mid]>A[mid+1] and A[mid]>A[mid-1]:
+		return A[mid]
+	elif A[mid-1]>A[mid]>A[mid+1]:
+		return FindMaxIncElem(A,low,mid-1)
+	else:
+		return FindMaxIncElem(A,mid+1,high)
+
+A = [8, 10, 20, 80, 100, 200, 400, 500, 3, 2, 1]
+B = [10, 20, 30, 40, 50]
+C= [120, 100, 80, 20, 0]
+print FindMaxIncElem(A,0,len(A)-1)
+print FindMaxIncElem(B,0,len(B)-1)
+print FindMaxIncElem(C,0,len(C)-1)

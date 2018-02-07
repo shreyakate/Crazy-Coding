@@ -1,0 +1,20 @@
+# your code goes here
+# your code goes here
+def findMinMaxArray(A):
+	l= 1
+	r= len(A)-1
+	min,max =A[0],A[0]
+	
+	while l!=r:
+		if A[l]<A[r]:
+			if A[l]<min : min = A[l]
+			if A[r]>max : max = A[r]
+		else:
+			if A[r]<min : min = A[r]
+			if A[l]>max : max = A[l]
+		r -=1
+		l +=1
+	
+	return min,max
+	
+print findMinMaxArray([1000, 11, 445, 1, 330, 3000])

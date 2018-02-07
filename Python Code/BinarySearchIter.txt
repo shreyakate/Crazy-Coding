@@ -1,0 +1,16 @@
+# your code goes here
+def BinarySearchIter(A, key, low, high):
+	while (low <= high):
+		mid = low + (high - low)/2
+		if A[mid] == key : 
+			return mid
+		elif A[mid] > key :
+			high = mid -1
+		else:
+			low = mid+1
+	return -1
+	
+
+print BinarySearchIter([1,2,3,4,5],1,0,4)
+
+

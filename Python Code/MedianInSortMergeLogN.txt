@@ -1,0 +1,20 @@
+# your code goes here
+def MedianArray(A):
+	n = len(A)
+	if n%2 == 1 : return A[n/2]
+	else: return (A[n/2] + A[n/2-1])/2
+		
+def findMedianInSortMerge(A, B):
+	m1 = MedianArray(A)
+	m2 = MedianArray(B)
+	n = len(A)
+	if n==2:
+		return (max(A[0],B[0])+min(A[1],B[1]))/2
+	if m1 == m2: return m1
+	elif m1 > m2:
+		return findMedianInSortMerge(A[:n/2+1],B[n/2:])
+	else: 
+		return findMedianInSortMerge(A[n/2:],B[:n/2+1])
+		
+print findMedianInSortMerge([1,12,15,26,38], [2,13,17,30,45])
+print findMedianInSortMerge([1, 2, 3, 6], [4, 6, 8, 10])

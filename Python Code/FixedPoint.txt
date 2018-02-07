@@ -1,0 +1,16 @@
+# your code goes here
+def FixedPoint(A, low, high):
+	if low <=high:
+		mid = low + (high-low)/2
+		if A[mid]==mid:
+			return mid
+		elif A[mid]>mid:
+			return FixedPoint(A,low,mid-1)
+		else:
+			return FixedPoint(A,mid+1,high)
+	
+	else:
+		return -1
+		
+arr = [-10, -1, 0, 3, 10, 11, 30, 50, 100]
+print FixedPoint(arr,0,len(arr)-1)

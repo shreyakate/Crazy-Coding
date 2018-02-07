@@ -1,0 +1,19 @@
+# your code goes here
+def SelectionSort(A,k):
+	for i in range (k):
+		max = -32000
+		pos = -1
+		swap = False
+		for j in range(i,len(A)):
+			if A[j]>max:
+				max= A[j]
+				pos = j
+				swap = True
+		if swap:
+			A[i], A[pos] = A[pos], A[i]
+			
+def kLargestElemsArraySelection(A,k):
+	SelectionSort(A,k)
+	return A[:k]
+
+print kLargestElemsArraySelection([1, 23, 12, 9, 30, 2, 50],3)
