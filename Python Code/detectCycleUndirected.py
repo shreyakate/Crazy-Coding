@@ -19,6 +19,7 @@ class Graph:
 				return True
 
 		return False
+		
 	def detectCycleUndirected(self):
 		visited = [False] * self.vertices
 
