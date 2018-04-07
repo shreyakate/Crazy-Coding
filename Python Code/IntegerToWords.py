@@ -55,3 +55,32 @@ def numberToWords(num):
 
 print IntegerToWords(12345619)
 print numberToWords(12345619)
+
+
+
+##Extra solution without any function calls
+
+# oneWordInt = "Zero One Two Three Four Five Six Seven Eight Nine Ten \
+#                Eleven Twelve Thirteen Fourteen Fifteen Sixteen Seventeen Eighteen Nineteen".split()
+#         tens = "Twenty Thirty Forty Fifty Sixty Seventy Eighty Ninety".split()
+#         hundred = "Hundred"
+#         largeNumbers = "Thousand Million Billion".split()
+        
+#         words, digits = [], 0
+#         while num:
+#             currNum, num = num % 1000, num / 1000
+#             word = ''
+#             if currNum > 99:
+#                 word += oneWordInt[currNum / 100] + ' ' + hundred + ' '
+#                 currNum %= 100
+#             if currNum > 19:
+#                 word += tens[currNum / 10 - 2] + ' '
+#                 currNum %= 10
+#             if currNum > 0:
+#                 word += oneWordInt[currNum] + ' '
+#             word = word.strip()
+#             if word:
+#                 word += ' ' + largeNumbers[digits - 1] if digits else ''
+#                 words += [word]
+#             digits += 1
+#         return ' '.join(words[::-1]) or 'Zero'
