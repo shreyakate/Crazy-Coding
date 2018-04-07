@@ -12,17 +12,27 @@ class Graph:
 
 		self.graph[u].append(v)
 
+	def detectCycleUtil(self,v,visited,recStack):
+		visited[v] = True
+		recStack[v] = True
+
+		for neighbour in self.graph[v]:
+			if visited[neighbour] == False:
+				if self.detectCycleUtil(neighbour,visited,recStack) == True:
+					return True
+			elif recStack[neighbour] == True:
+				return True
+
+			recStack[v] = False
+			return False
+
 	def detectCycle(self,root):
 		visited = [False]*(len(self.vertices))
-		stack = []
-		stack.append(root)
-		while stack:
-			node = stack.pop()
-			if visited[node] == True:
-				return True
-			visited[node] = True
-			for i in self.graph[node]:
-				stack.append(i)
+		recStack = [False]*(len(self.vertices))
+		for node in range(len(self.vertices)):
+			if visited[node] == False:
+				if self.detectCycleUtil(node,visited,recStack) == True:
+					return True
 		return False
 
 g = Graph()
