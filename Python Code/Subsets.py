@@ -17,16 +17,6 @@ class Solution(object):
 
 s = Solution()
 print s.subsets([4,4,4,1,4])
-StringManSMS("Hello World this is Shreya",10)
 
-def StringManSMS(str, n):
-    words= str.split()
-    res = ''
-    tmp = ''
-    i = 0
-    while words:
-        if len(words[i])> n:
-            tmp = words[i][:n+1]
-            carry = words[i][n+1:]
 
 
