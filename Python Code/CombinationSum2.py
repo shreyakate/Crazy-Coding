@@ -23,7 +23,6 @@ class CombinationSum2:
 			elif target >0:
 				for i in range(start,end):
 					if i > start and candidates[i] == candidates[i-1]:
-						print candidates[i]
 						continue
 					tmp.append(candidates[i])
 					backtrack(tmp,i+1,end,target-candidates[i])
@@ -35,7 +34,7 @@ class CombinationSum2:
 		return ans
 
 cmb = CombinationSum2()
-# print cmb.comnbsum2([10, 1, 2, 7, 6, 1, 5],8)
+print cmb.comnbsum2([10, 1, 2, 7, 6, 1, 5],8)
 print cmb.backtracking([10, 1, 2, 7, 6, 1, 5],8)
 
 
