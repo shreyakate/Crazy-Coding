@@ -18,5 +18,21 @@ class Solution(object):
 s = Solution()
 print s.subsets([4,4,4,1,4])
 
+def subsetters2(nums):
+    def backtrack(start,end,curr):
+        ans.append(curr[:])
+        for i in range(start,end):
+            if i>start and nums[i-1] ==nums[i]:
+                continue
+            curr.append(nums[i])
+            backtrack(i+1,end,curr)
+            curr.pop()
+    
+    ans =[]
+    nums.sort()
+    backtrack(0,len(nums),[])
+    return ans
+
+print subsetters2([1,2,2])
 
 
