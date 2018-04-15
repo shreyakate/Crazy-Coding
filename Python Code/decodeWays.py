@@ -13,7 +13,6 @@ def decodeWays(s):
 			dp[i] += dp[i-1]
 		if last >= 10 and last <=26:
 			dp[i] += dp[i-2]
-	print dp
 	return dp[n]
 
 print decodeWays("123")
