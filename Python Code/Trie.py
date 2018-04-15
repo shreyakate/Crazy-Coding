@@ -12,13 +12,13 @@ def Trie:
 	def insert(self,word):
 		curr = self.root
 		for ch in word:
-			curr = curr.child[ch]
+			curr = curr.children[ch]
 		curr.isEnd = True
 
 	def search(self,word):
 		curr = self.root
 		for ch in word:
-			curr = curr.child.get(ch)
+			curr = curr.children.get(ch)
 			if not curr:
 				return False
 		return curr.isEnd 
@@ -26,9 +26,9 @@ def Trie:
 	def startsWith(self,prefix):
 		curr = self.root
 		for ch in prefix:
-			curr = curr.child.get(ch)
+			curr = curr.children.get(ch)
 			if not curr:
 				return False
 		return True
 
-	
+
