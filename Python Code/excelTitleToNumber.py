@@ -12,15 +12,19 @@ print excelTitleToNumber('AABB')
 print excelTitleToNumber('AUL')
 
 
-def excelNumberToTitle(num):
-	if not num : return ''
-	res = ''
-	while num:
-		ch = chr((num%26) + 64)
-		res = ch + res
-		num = num//26
+def excelNumberToTitle(n):
+	if not n : return ''
+        res = ''
+        while n:
+            if n%26:
+                res = chr((n%26) + 64) + res
+                n = n//26
+            else:
+                res = chr(90) + res
+                n = (n//26) -1
+            
+        return res
 
-	return res
 print excelNumberToTitle(18306)
 print excelNumberToTitle(12345)
 print excelNumberToTitle(26)
