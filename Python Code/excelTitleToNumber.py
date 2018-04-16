@@ -23,3 +23,4 @@ def excelNumberToTitle(num):
 	return res
 print excelNumberToTitle(18306)
 print excelNumberToTitle(12345)
+print excelNumberToTitle(26)
