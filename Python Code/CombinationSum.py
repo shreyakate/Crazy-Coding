@@ -17,12 +17,12 @@ class CombinationSum:
 
 	def backtracking(self, candidates, target):
 		def backtrack(tmp,start, end, target):
-			print tmp,start, end, target,
+			# print tmp,start, end, target,
 			if target ==0:
 				ans.append(tmp[:])
 			elif target>0:
 				for i in range(start,end):
-					print i, tmp
+					# print i, tmp
 					tmp.append(candidates[i])
 					backtrack(tmp,i,end,target - candidates[i])
 					tmp.pop()
@@ -33,5 +33,5 @@ class CombinationSum:
 
 cmb = CombinationSum()
 
-#print cmb.CombSum([2,3,6,7],7)
+print cmb.CombSum([2,3,6,7],7)
 print cmb.backtracking([2,3,6,7],7)

@@ -12,7 +12,9 @@ def MovingAverage(dataStream,size):
 			s.sum -= s.queue.popleft()
 		s.sum += val
 		s.queue.append(val)
-		print 1.0 * s.sum/ len(s.queue)
+		print 1.0 * s.sum/ len(s.queue),
 
 MovingAverage([1,4,8,2,4,1,2,4,6,8],5)
+print " next"
+MovingAverage([1,10,3,5,7,6],3)
 

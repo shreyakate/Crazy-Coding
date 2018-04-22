@@ -13,7 +13,7 @@ def IntegerToWords(num):
 	elif len(x)%3 == 2: x = '0'+ x
 	nums = [x[i:i+3] for i in range(0,len(x),3)][::-1]
 	for i in range(len(nums)):
-		if nums[i].count('0')==3:
+		if nums[i].count('0')==3:       # condition where the middle part of number is all zeros
 			continue
 		res = others[i] + res
 		if nums[i][1]=='1':
@@ -55,6 +55,7 @@ def numberToWords(num):
 
 print IntegerToWords(12345619)
 print numberToWords(12345619)
+print numberToWords(1000)
 
 
 

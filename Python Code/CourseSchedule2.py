@@ -35,11 +35,33 @@ class Graph:
 					return True
 		return False
 
+	def topoSortUtil(self,u,visited,stack):
+		visited[u] = True
+
+		for i in self.graph[u]:
+			if visited[i] == False:
+				self.topoSortUtil(i,visited,stack)
+
+		stack.insert(0,u)
+
+	def topologicalSort(self):
+		stack = []
+		visited = [False]*(len(self.vertices))
+
+		for i in self.vertices:
+			if visited[i] == False:
+				self.topoSortUtil(i,visited,stack)
+
+		print stack
+
+
 g = Graph()
 g.addEdge(0, 1)
 g.addEdge(0, 2)
 g.addEdge(1, 3)
 g.addEdge(2, 3)
 g.addEdge(3, 4)
-g.addEdge(4, 2)
-print g.detectCycle()
+# g.addEdge(4,2)
+if  g.detectCycle() : print []
+else:
+	g.topologicalSort()

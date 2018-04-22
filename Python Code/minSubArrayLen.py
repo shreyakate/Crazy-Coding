@@ -16,7 +16,3 @@ def minSubArrayLen(s, nums):
 	return minLen
 
 print minSubArrayLen(7,[2,3,1,2,4,3])
-
-
-
-

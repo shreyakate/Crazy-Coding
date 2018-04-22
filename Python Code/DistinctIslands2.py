@@ -30,7 +30,6 @@ def DistinctIslands2(grid):
 
 	for i in range(r):
 		for j in range(c):
-			isl
 			if DFS(grid,i,j,[]):
 				islands.add(str(normalize()))
 	print len(islands)
