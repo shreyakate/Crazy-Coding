@@ -27,11 +27,10 @@ matrix = [[1,0,1,0,0],
 [1,1,1,1,1],
 [1,0,0,1,0]]
 
-matrix1 = 
-[[1,1,1,1,1],
+matrix1 = [[1,1,1,1,1],
 [1,1,1,1,1],
 [1,1,1,1,1],
 [1,1,1,1,1]]
 
 print maximalSquare(matrix1)
-print maxSquare(matrix1)
+print maxSquare(matrix)

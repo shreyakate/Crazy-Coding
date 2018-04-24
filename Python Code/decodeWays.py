@@ -6,9 +6,10 @@ def decodeWays(s):
 	dp = [0 for _ in range(n+1)]
 	dp[0] = 1
 	dp[1] = 1 if s[0] != '0' else 0
+	print dp
 	for i in range(2,n+1):
 		prev, last = int(s[i-1]), int(s[i-2:i])
-		print prev , last
+		print prev , last, dp
 		if prev >=1 and prev <=9:
 			dp[i] += dp[i-1]
 		if last >= 10 and last <=26:
